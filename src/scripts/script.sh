@@ -1,7 +1,7 @@
 #!/bin/bash
 CONFIG_FILE="archConfigs/configurationFiles/config.txt"
 
-DOTFILES_DIR="${HOME}/git/dotfiles/archConfigs/configurationFiles"
+DOTFILES_DIR="${HOME}/git/BackupArch/archConfigs/configurationFiles"
 
 if [ -f "$DOTFILES_DIR/archConfigs/configurationFiles/.dotfiles_config" ]; then
     source "$HOME/archConfigs/configurationFiles/.dotfiles_config"
