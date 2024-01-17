@@ -1,11 +1,9 @@
 #!/bin/bash
-CONFIG_FILE="archConfigs/configurationFiles/config.txt"
 
-DOTFILES_DIR="${HOME}/git/BackupArch/archConfigs/configurationFiles"
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+CONFIG_FILE="${SCRIPT_DIR}/../../archConfigs/configurationFiles/config.txt"
 
-if [ -f "$DOTFILES_DIR/archConfigs/configurationFiles/.dotfiles_config" ]; then
-    source "$HOME/archConfigs/configurationFiles/.dotfiles_config"
-fi
+DOTFILES_DIR="${SCRIPT_DIR}/../../archConfigs/configurationFiles"
 
 backup() {
     local src=$1
@@ -42,9 +40,10 @@ expand_path() {
     echo $path
 }
 
-while read -r key path; do
-    path=$(expand_path $path)
-    dest_path="$DOTFILES_DIR/$key"
+# Process the configuration file
+while IFS=' ' read -r key path; do
+    path=$(expand_path "$path")
+    dest_path="${DOTFILES_DIR}/${key}"
     case $1 in
         backup)
             [ "$2" == "$key" ] || [ -z "$2" ] && backup "$path" "$dest_path"
@@ -60,4 +59,4 @@ while read -r key path; do
             exit 1
             ;;
     esac
-done < $CONFIG_FILE
+done < "$CONFIG_FILE"
