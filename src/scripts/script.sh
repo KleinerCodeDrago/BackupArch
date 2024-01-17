@@ -1,10 +1,10 @@
 #!/bin/bash
-CONFIG_FILE="configurationFiles/config.txt"
+CONFIG_FILE="archConfigs/configurationFiles/config.txt"
 
-DOTFILES_DIR="${HOME}/git/dotfiles/configurationFiles"
+DOTFILES_DIR="${HOME}/git/dotfiles/archConfigs/configurationFiles"
 
-if [ -f "$HOME/.dotfiles_config" ]; then
-    source "$HOME/.dotfiles_config"
+if [ -f "$DOTFILES_DIR/archConfigs/configurationFiles/.dotfiles_config" ]; then
+    source "$HOME/archConfigs/configurationFiles/.dotfiles_config"
 fi
 
 backup() {
