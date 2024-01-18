@@ -1,0 +1,25 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Remove Everything",
+        "type": "shell",
+        "command": "./src/scripts/script.sh remove",
+        "group": "test",
+        "presentation": {
+          "reveal": "always",
+          "panel": "new"
+        }
+      }
+      {
+        "label": "restore Everything",
+        "type": "shell",
+        "command": "./src/scripts/script.sh restore",
+        "group": "test",
+        "presentation": {
+          "reveal": "always",
+          "panel": "new"
+        }
+      }
+    ]
+  }
