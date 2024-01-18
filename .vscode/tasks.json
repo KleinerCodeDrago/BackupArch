@@ -10,7 +10,7 @@
           "reveal": "always",
           "panel": "new"
         }
-      }
+      },
       {
         "label": "restore Everything",
         "type": "shell",
@@ -20,6 +20,16 @@
           "reveal": "always",
           "panel": "new"
         }
-      }
+      },
+      {
+        "label": "Backup packages",
+        "type": "shell",
+        "command": "./src/scripts/backupPackageList.sh",
+        "group": "test",
+        "presentation": {
+          "reveal": "always",
+          "panel": "new"
+        }
+      },
     ]
   }
